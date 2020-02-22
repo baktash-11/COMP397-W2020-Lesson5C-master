@@ -16,7 +16,6 @@ var scenes;
 (function (scenes) {
     var Play = /** @class */ (function (_super) {
         __extends(Play, _super);
-        // PRIVATE INSTANCE MEMBERS
         // PUBLIC PROPERTIES
         // CONSTRUCTOR
         function Play() {
@@ -28,11 +27,22 @@ var scenes;
         // PUBLIC METHODS
         //initialize and instatiate
         Play.prototype.Start = function () {
+            //instantiate a new Text object
+            this._welcomeLabel = new objects.Label("COMP397 - Midterm Test", "40px", "Consolas", "#000000", 320, 180, true);
+            // buttons
+            this._startButton = new objects.Button(config.Game.ASSETS.getResult("rollButton"), 320, 430, true);
             this.Main();
         };
         Play.prototype.Update = function () {
         };
         Play.prototype.Main = function () {
+            var _this = this;
+            this.addChild(this._welcomeLabel);
+            this.addChild(this._startButton);
+            this._startButton.on("click", function () {
+                // config.Game.SCENE = scenes.State.PLAY;
+                _this._welcomeLabel.text = "lets play";
+            });
         };
         return Play;
     }(objects.Scene));
