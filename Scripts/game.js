@@ -16,7 +16,7 @@ var Game = (function () {
         { id: "backButton", src: "./Assets/images/backButton.png" },
         //rollButton added at preeload
         { id: "rollButton", src: "./Assets/images/rollButton.png" },
-        { id: "bg", src: "./Assets/images/bg.jpg" },
+        { id: "backGround", src: "./Assets/images/bg.jpg" },
         { id: "ocean", src: "./Assets/images/ocean.gif" },
         { id: "ocean", src: "./Assets/images/1.png" },
         { id: "ocean", src: "./Assets/images/2.png" },
