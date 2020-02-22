@@ -35,11 +35,11 @@ module scenes
             this._background = new createjs.Bitmap("./Assets/images/bg.jpg");
             
              //instantiate a new Text object
-             this._welcomeLabel = new objects.Label("Click to Rool Button", "30px", "Consolas", "#fff", 320, 50, true);
+             this._welcomeLabel = new objects.Label("Click the Rool Button to Rool the Dice", "30px", "Consolas", "#fff", 320, 50, true);
 
              //Adding dice lable to display dice value 
-             this._dice1Label = new objects.Label("Dice 1", "20px", "Consolas", "#fff", 250, 270, true);
-             this._dice2Label = new objects.Label("Dice 2", "20px", "Consolas", "#fff", 400, 270, true);
+             this._dice1Label = new objects.Label("0", "20px", "Consolas", "#fff", 250, 270, false);
+             this._dice2Label = new objects.Label("0", "20px", "Consolas", "#fff", 400, 270, false);
              
              // buttons
             this._startButton = new objects.Button(config.Game.ASSETS.getResult("rollButton"), 320, 430, true);
@@ -83,7 +83,7 @@ module scenes
 
             this._startButton.on("click", ()=>{
                // config.Game.SCENE = scenes.State.PLAY;
-               this._welcomeLabel.text="lets play"
+               
                let dice1= Math.floor(Math.random() * 6) +1;
                let dice2= Math.floor(Math.random() * 6) +1;
                //console.log(dice1 +" " +dice2)
@@ -103,6 +103,9 @@ module scenes
                 this._dice2.y=150;
               this.addChild(this._dice1);
               this.addChild(this._dice2);
+
+              this._dice2Label.text=""+dice2;
+              this._dice1Label.text=""+dice1;
 
 
             });
